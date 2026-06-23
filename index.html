@@ -1,25 +1,45 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>Jeju Travel Guide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的旅行日記</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: blue; }
+        .day-content { display: none; }
+        .active { display: block; }
+    </style>
 </head>
-
 <body>
-  <h1>🏝 Jeju Travel Guide</h1>
-  <p>4 Days Family Trip</p>
 
-  <h2>Day 1 - Arrival</h2>
-  <p>✈️ Airport → 🚗 Car → 🏨 Hotel</p>
+    <nav>
+        <a href="#day1" onclick="showDay('day1')">Day 1</a>
+        <a href="#day2" onclick="showDay('day2')">Day 2</a>
+        <a href="#day3" onclick="showDay('day3')">Day 3</a>
+    </nav>
 
-  <h2>Day 2 - East Coast</h2>
-  <p>🏖 Hamdeok Beach → 🌋 Seongsan Ilchulbong</p>
+    <div id="day1" class="day-content active">
+        <h1>Day 1: 出發</h1>
+        <p>行程描述：第一天抵達濟州島，先去吃黑豬肉麵。</p>
+    </div>
 
-  <h2>Day 3 - Shinhwa World</h2>
-  <p>🎢 Water Park → 🎡 Theme Park</p>
+    <div id="day2" class="day-content">
+        <h1>Day 2: 涯月邑探險</h1>
+        <p>行程描述：體驗 9.81 Park，下午去喝咖啡。</p>
+    </div>
 
-  <h2>Day 4 - Return</h2>
-  <p>🧳 Checkout → ✈️ Airport</p>
+    <div id="day3" class="day-content">
+        <h1>Day 3: 最終日</h1>
+        <p>行程描述：前往馬術公園體驗馬術表演。</p>
+    </div>
 
+    <script>
+        function showDay(id) {
+            document.querySelectorAll('.day-content').forEach(div => div.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 </body>
 </html>
